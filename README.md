@@ -66,31 +66,6 @@ Edit file db/main.db and replace login and password to valid login credentails.:
 ```sh
 {"token":"Shared\/IDL:IceSess\\\/SessMgr:1\\.0.IDL\/Common\/!ICESMS\\\/RESH!ICESMSLB\\\/RES.LB!-3552884299647084251!398031!0!1!E2E-1","apiUrl":"https:\/\/api.dev.sabre.com\/v1","clientId":"V1:_YOUR_LOGIN_","clientSecret":"_YOUR_SECRET_PASS_"}
 ```
-# SabreRESTJavaBridge
-Another example Sabre Java Bridge for managing REST API request and responses coded by Cometari Dedicated Solutions http://www.cometari.com
-
-It provides access to Sabre Rest API and the access is realized by http (REST) protocol.
-Please set your credentials (dont code it in Base64) in application.properties file. 
-
-The package should be deployed on Tomcat server and following configuration should be added to sever.xml 
-in order to accept content-encoding:
-
-```xml
-<Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"
-compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla, traviata"
-compressableMimeType="application/json,application/xml,text/html,text/xml,text/plain"/>
-```
-**URL pattern:** host/api/url
-
-You can also rename built package WAR to ROOT.WAR and deploy to <CATALINA_PATH>/webapps.
-
-Example:
-
-1. Directly request to Sabre API https://api.sabre.com/v1/lists/supported/countries 
-2. Equivalent request to the bridge http://\<YOUR_HOST\>/api/v1/lists/supported/countries
-
-Supported requests (URL) you can find in Sabre API documentation available at https://developer.sabre.com/docs/read/Home
-
 ## Disclaimer of Warranty and Limitation of Liability
 
 This software and any compiled programs created using this software are furnished “as is” without warranty of any kind, including but not limited to the implied warranties of merchantability and fitness for a particular purpose. No oral or written information or advice given by Sabre, its agents or employees shall create a warranty or in any way increase the scope of this warranty, and you may not rely on any such information or advice.
